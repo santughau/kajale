@@ -1,0 +1,41 @@
+#optA:hover {
+  background-color: red;
+  color: white;
+  border-radius: 10px;
+  animation: slideInLeft 20s ease forwards;
+}
+
+
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#optB:hover {
+  background-color: blue;
+  color: white;
+  border-radius: 10px;
+  animation: slideInLeft 2s ease forwards;
+}
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
