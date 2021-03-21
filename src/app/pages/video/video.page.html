@@ -11,61 +11,31 @@
         <ion-col size="4">
           <ion-label class="text-center">वर्ग</ion-label>
           <ion-item>
-            <ion-select placeholder="वर्ग   निवडा   " interface="popover" mode="ios" name="classes" required>
-              <ion-select-option value="item.id">
-                5</ion-select-option>
-              <ion-select-option value="item.id">
-                6</ion-select-option>
-              <ion-select-option value="item.id">
-                7</ion-select-option>
-              <ion-select-option value="item.id">
-                8</ion-select-option>
-              <ion-select-option value="item.id">
-                9</ion-select-option>
-              <ion-select-option value="item.id">
-                10</ion-select-option>
-
+            <ion-select placeholder="वर्ग   निवडा   " interface="popover" mode="ios" name="classes"
+              (ionChange)="OnClassaChange($event)" required>
+              <ion-select-option value="{{item.allclasses_id}}" *ngFor="let item of allClasses">
+                {{item.allclasses_className}}</ion-select-option>
             </ion-select>
           </ion-item>
         </ion-col>
+
         <ion-col size="4">
           <ion-label>विषय</ion-label>
           <ion-item>
-            <ion-select placeholder="विषय   निवडा   " interface="alert" mode="ios" name="tal" required>
-              <ion-select-option value="item.id">
-                item.name</ion-select-option>
+            <ion-select placeholder="विषय   निवडा   " interface="action-sheet" mode="ios" name="tal"
+              (ionChange)="OnSubjectChange($event)" required>
+              <ion-select-option value="{{item.allSubject_id}}" *ngFor="let item of allSubject">
+                {{item.allSubject_subjectName}}</ion-select-option>
             </ion-select>
           </ion-item>
         </ion-col>
         <ion-col size="4">
           <ion-label>पाठाचे नाव</ion-label>
           <ion-item>
-            <ion-select placeholder=" पाठाचे नाव  निवडा   " interface="action-sheet" mode="ios" name="tal" required>
-              <ion-select-option value="item.id">
-                item.nam item.name item.name vitem.name e</ion-select-option>
-              <ion-select-option value="item.id">
-                item.name</ion-select-option>
-              <ion-select-option value="item.id">
-                item.name</ion-select-option>
-              <ion-select-option value="item.id">
-                item.name</ion-select-option>
-              <ion-select-option value="item.id">
-                item.name</ion-select-option>
-              <ion-select-option value="item.id">
-                item.name</ion-select-option>
-              <ion-select-option value="item.id">
-                item.name</ion-select-option>
-              <ion-select-option value="item.id">
-                item.name</ion-select-option>
-              <ion-select-option value="item.id">
-                item.name</ion-select-option>
-              <ion-select-option value="item.id">
-                item.name</ion-select-option>
-              <ion-select-option value="item.id">
-                item.name</ion-select-option>
-              <ion-select-option value="item.id">
-                item.name</ion-select-option>
-
+            <ion-select placeholder=" पाठाचे नाव  निवडा   " interface="action-sheet" mode="ios" name="tal"
+              (ionChange)="OnChapterChange($event)" required>
+              <ion-select-option value="{{item.allChapters_id}}" *ngFor="let item of allChapters">
+                {{item.allChapters_number}}) {{item.allChapters_name}}</ion-select-option>
             </ion-select>
           </ion-item>
         </ion-col>

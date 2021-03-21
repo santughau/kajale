@@ -10,20 +10,10 @@
       <ion-row>
         <ion-col size="12">
           <ion-item>
-            <ion-select placeholder="वर्ग   निवडा   " interface="popover" mode="ios" name="classes" required>
-              <ion-select-option value="item.id">
-                5</ion-select-option>
-              <ion-select-option value="item.id">
-                6</ion-select-option>
-              <ion-select-option value="item.id">
-                7</ion-select-option>
-              <ion-select-option value="item.id">
-                8</ion-select-option>
-              <ion-select-option value="item.id">
-                9</ion-select-option>
-              <ion-select-option value="item.id">
-                10</ion-select-option>
-
+            <ion-select placeholder="वर्ग   निवडा   " interface="popover" mode="ios" name="classes"
+              (ionChange)="OnClassaChange($event)" required>
+              <ion-select-option value="{{item.allclasses_id}}" *ngFor="let item of allClasses">
+                {{item.allclasses_className}}</ion-select-option>
             </ion-select>
           </ion-item>
         </ion-col>
@@ -39,30 +29,10 @@
 
   <ion-grid>
     <ion-row>
-      <ion-col size="6">
-        <img src="../../../assets/book.jpg" />
+      <ion-col size="6" *ngFor="let item of allSubject">
+        <img src="{{item.allSubject_image}}"  (click)="openBrowese(item.allSubject_pdfLink)"/>
       </ion-col>
-      <ion-col size="6">
-        <img src="../../../assets/book.jpg" />
-      </ion-col>
-      <ion-col size="6">
-        <img src="../../../assets/book.jpg" />
-      </ion-col>
-      <ion-col size="6">
-        <img src="../../../assets/book.jpg" />
-      </ion-col>
-      <ion-col size="6">
-        <img src="../../../assets/book.jpg" />
-      </ion-col>
-      <ion-col size="6">
-        <img src="../../../assets/book.jpg" />
-      </ion-col>
-      <ion-col size="6">
-        <img src="../../../assets/book.jpg" />
-      </ion-col>
-      <ion-col size="6">
-        <img src="../../../assets/book.jpg" />
-      </ion-col>
+      
     </ion-row>
   </ion-grid>
 
